@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useCallback} from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -20,8 +20,10 @@ function App() {
             <div className="h-20 w-full bg-white"></div>
             <div className="flex gap-2">
               <input type="range" />
-              <input type="checkbox" /><>Numerals</>
-              <input type="checkbox" /><>SpecialChar</>
+              <input type="checkbox" />
+              <font>Numerals</font>
+              <input type="checkbox" />
+              <font>SpecialChar</font>
             </div>
           </div>
         </div>
