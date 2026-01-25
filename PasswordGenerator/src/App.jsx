@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -8,7 +8,12 @@ function App() {
   const [NumberAllowed, setNumberAllowed] = useState(false);
   const [CharAllowed, setCharAllowed] = useState(false);
   const [Password, setPassword] = useState("");
+  const passwordRef = useRef(null);
 
+  const copypassword = useCallback(() => {
+    passwordRef.current?.select();
+    window.navigator.clipboard.writeText(Password);
+  }, [Password]);
   const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz";
@@ -21,9 +26,11 @@ function App() {
       pass += str.charAt(char);
     }
     setPassword(pass);
-  }, [length, NumberAllowed, CharAllowed,setPassword]);
+  }, [length, NumberAllowed, CharAllowed, setPassword]);
 
-  useEffect(()=>{passwordGenerator()},[length, NumberAllowed, CharAllowed, passwordGenerator])
+  useEffect(() => {
+    passwordGenerator();
+  }, [length, NumberAllowed, CharAllowed, passwordGenerator]);
 
   return (
     <>
@@ -40,8 +47,12 @@ function App() {
                 value={Password}
                 placeholder="Password"
                 readOnly
+                ref={passwordRef}
               />
-              <button className="h-10 w-15 bg-amber-700 rounded-bl-lg text-amber-50">
+              <button
+                onClick={copypassword}
+                className="h-10 w-15 bg-amber-700 rounded-bl-lg text-amber-50"
+              >
                 Copy
               </button>
             </div>
@@ -65,12 +76,13 @@ function App() {
                 }}
               />
               <label>char</label>
-              <input 
+              <input
                 type="checkbox"
                 defaultChecked={NumberAllowed}
                 onChange={() => {
                   setNumberAllowed((prev) => !prev);
-                }}/>
+                }}
+              />
               <label>Number</label>
             </div>
           </div>
