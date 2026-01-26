@@ -17,3 +17,12 @@ Concepts Learned
 - useRef – copying password directly from the input field
 - React re-render cycle & Strict Mode behavior.
 ![Password Generator Preview](/psword_gen.png)
+
+
+## Currency_Changer
+A sleek, responsive currency converter application built with React, Tailwind CSS, and the Currency API. This project demonstrates the use of custom hooks, state management, and component reusability.
+
+- Real-time Rates: Fetches live currency data using a custom useCurrencyInfo hook.
+- Reusable Components: Centralized InputBox component for "From" and "To" fields.
+- Swap Functionality: Quickly switch between origin and destination currencies.
+![Currency_Changer](/currency.png)
