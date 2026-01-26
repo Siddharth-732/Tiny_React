@@ -4,18 +4,19 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  console.count("🔁 Component rendered");
-  const [length, setlength] = useState(8);
-  const [NumberAllowed, setNumberAllowed] = useState(false);
-  const [CharAllowed, setCharAllowed] = useState(false);
-  const [Password, setPassword] = useState("");
-  const passwordRef = useRef(null);
 
-  const copypassword = useCallback(() => {
-    passwordRef.current?.select();
-    window.navigator.clipboard.writeText(Password);
+  console.count("🔁 Component rendered");
+  const [length, setlength] = useState(8);        // use state for length of password
+  const [NumberAllowed, setNumberAllowed] = useState(false);  // toggle to allow numbers
+  const [CharAllowed, setCharAllowed] = useState(false);  // toggle to allow numbers
+  const [Password, setPassword] = useState(""); //use state for password
+  const passwordRef = useRef(null); //refference for password
+
+  const copypassword = useCallback(() => {   //hook to implement copy button 
+    passwordRef.current?.select();    //reference used to show the copied password
+    window.navigator.clipboard.writeText(Password); //copies the password string to the clipboard
   }, [Password]);
-  const passwordGenerator = useCallback(() => {
+  const passwordGenerator = useCallback(() => { //hook to implement re-render after every password change
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz";
 
@@ -26,10 +27,10 @@ function App() {
       let char = Math.floor(Math.random() * str.length + 1);
       pass += str.charAt(char);
     }
-    setPassword(pass);
+    setPassword(pass);   // set password
   }, [length, NumberAllowed, CharAllowed, setPassword]);
 
-  useEffect(() => {
+  useEffect(() => { // it implement the password change
     passwordGenerator();
   }, [length, NumberAllowed, CharAllowed, passwordGenerator]);
 
