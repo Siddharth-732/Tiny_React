@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
+  console.count("🔁 Component rendered");
   const [length, setlength] = useState(8);
   const [NumberAllowed, setNumberAllowed] = useState(false);
   const [CharAllowed, setCharAllowed] = useState(false);
