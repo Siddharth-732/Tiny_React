@@ -1,6 +1,19 @@
 # Tiny_React
-This repository documents the journey of learning React by building multiple small projects using React and Tailwind CSS. Each project focuses on strengthening core concepts like components, props, state management, and basic hooks, while also improving my UI skills with Tailwind. Instead of following only tutorials, I’m learning by building and experimenting, gradually increasing complexity as my understanding grows.
+This repository documents the journey of learning React by building multiple small projects using React and Tailwind CSS. Each project foc- uses on strengthening core concepts like components, props, state management, and basic hooks, while also improving my UI skills with Tailwind. Instead of following only tutorials, I’m learning by building and experimenting, gradually increasing complexity as my understanding grows.
 
 ## BG_Changer
 A simple React application that lets users change the background color of the screen using interactive buttons. The project is built to understand core React concepts like state management along with Tailwind CSS utility classes for layout, positioning, and hover effects.
-![bg_changer](/Tiny_React/bgChanger/src/assets/bg_changer.png)
+![bg_changer](/bg_changer.png)
+
+
+## Password generator
+A simple and interactive Password Generator built using React Hooks.
+This project helped me understand how React handles state, effects, and re-renders in a real-world scenario.
+
+Concepts Learned
+- useState – managing password length, options, and generated password
+- useCallback – preventing unnecessary function recreation and infinite loops
+- useEffect – regenerating password automatically when settings change
+- useRef – copying password directly from the input field
+- React re-render cycle & Strict Mode behavior.
+![Password Generator Preview](/psword_gen.png)
