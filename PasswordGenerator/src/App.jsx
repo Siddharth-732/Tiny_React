@@ -12,10 +12,7 @@ function App() {
   const [Password, setPassword] = useState(""); //use state for password
   const passwordRef = useRef(null); //refference for password
 
-  const copypassword = useCallback(() => {   //hook to implement copy button 
-    passwordRef.current?.select();    //reference used to show the copied password
-    window.navigator.clipboard.writeText(Password); //copies the password string to the clipboard
-  }, [Password]);
+  //PASSWORD GENERATOR
   const passwordGenerator = useCallback(() => { //hook to implement re-render after every password change
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz";
@@ -30,6 +27,13 @@ function App() {
     setPassword(pass);   // set password
   }, [length, NumberAllowed, CharAllowed, setPassword]);
 
+  // COPY PASSWORD FROM THE CLIPBOARD
+  const copypassword = useCallback(() => {   //hook to implement copy button 
+    passwordRef.current?.select();    //reference used to show the copied password
+    window.navigator.clipboard.writeText(Password); //copies the password string to the clipboard
+  }, [Password]);
+
+  
   useEffect(() => { // it implement the password change
     passwordGenerator();
   }, [length, NumberAllowed, CharAllowed, passwordGenerator]);
