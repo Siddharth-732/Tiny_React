@@ -3,7 +3,7 @@ This repository documents the journey of learning React by building multiple sma
 
 ## BG_Changer
 A simple React application that lets users change the background color of the screen using interactive buttons. The project is built to understand core React concepts like state management along with Tailwind CSS utility classes for layout, positioning, and hover effects.
-![bg_changer](/bg_changer.png)
+![bg_changer](/project_pic/bg_changer.png)
 
 
 ## Password generator
