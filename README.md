@@ -16,7 +16,7 @@ Concepts Learned
 - useEffect – regenerating password automatically when settings change
 - useRef – copying password directly from the input field
 - React re-render cycle & Strict Mode behavior.
-![Password Generator Preview](/psword_gen.png)
+![Password Generator Preview](/project_pic/psword_gen.png)
 
 
 ## Currency_Changer
@@ -25,4 +25,13 @@ A sleek, responsive currency converter application built with React, Tailwind CS
 - Real-time Rates: Fetches live currency data using a custom useCurrencyInfo hook.
 - Reusable Components: Centralized InputBox component for "From" and "To" fields.
 - Swap Functionality: Quickly switch between origin and destination currencies.
-![Currency_Changer](/currency.png)
+![Currency_Changer](/project_pic/currency.png)
+
+
+## Router_React
+A modern, highly designed multi-page website built with React and React Router DOM. This project demonstrates the implementation of a clean UI with persistent layouts, dynamic routing, and active state navigation.
+
+- Persistent Layout: A fixed Header and Footer using the <Outlet /> pattern.
+- Active Navigation: Navigation links that highlight based on the current URL using NavLink.
+- Dynamic Routing: Implemented User/:userid paths to handle variable data in the URL.
+![Router](/project_pic/router.png)
