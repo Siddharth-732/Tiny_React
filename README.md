@@ -35,3 +35,16 @@ A modern, highly designed multi-page website built with React and React Router D
 - Active Navigation: Navigation links that highlight based on the current URL using NavLink.
 - Dynamic Routing: Implemented User/:userid paths to handle variable data in the URL.
 ![Router](/project_pic/router.png)
+
+## React Theme Toggler
+A responsive Theme Switcher application built with React and Vite. This project demonstrates how to manage global state using the Context API to toggle between light and dark modes seamlessly across the entire application.
+
+- Dynamic Theming: Switch between Light and Dark modes with a single toggle.
+- Global State: Uses React Context to avoid "Prop Drilling."
+- Utility-First Styling: Built using Tailwind CSS for rapid and responsive UI development.
+### 📸 Interface Gallery
+
+<p align="center">
+  <img src="/project_pic/theme_white.png" width="45%" />
+  <img src="/project_pic/theme_black.png" width="45%" />
+</p>
