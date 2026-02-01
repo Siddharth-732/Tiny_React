@@ -1,24 +1,29 @@
+/*
+-> I used 2 hook from the react library
+-> Theme Provider form theme.js
+-> 2 Components (themeBtn and Card)
+-> Finally App.css 
+*/
 import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
 import { ThemeProvider } from "../contexts/theme";
 import ThemeBtn from "../components/ThemeBtn";
 import Card from "../components/Card";
+import "./App.css";
 
 function App() {
-  const [themeMode, setThemeMode] = useState("light")
+  //this is the use state i used so that i can change the theme with a toggle
+  const [themeMode, setThemeMode] = useState("light")  
 
+  // change the theme {dark -> light}
   const lightTheme = () => {
     setThemeMode("light")
   }
-
+  // change the theme {light -> dark}
   const darkTheme = () => {
     setThemeMode("dark")
   }
 
-  // actual change in theme
-
+  // Here is where i actually change the inner html that switch dark and light theme
   useEffect(() => {
     document.querySelector('html').classList.remove("light", "dark")
     document.querySelector('html').classList.add(themeMode)
