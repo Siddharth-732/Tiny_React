@@ -42,6 +42,7 @@ A responsive Theme Switcher application built with React and Vite. This project 
 - Dynamic Theming: Switch between Light and Dark modes with a single toggle.
 - Global State: Uses React Context to avoid "Prop Drilling."
 - Utility-First Styling: Built using Tailwind CSS for rapid and responsive UI development.
+
 ### 📸 Interface Gallery
 
 <p align="center">
