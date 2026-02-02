@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -11,17 +11,37 @@ function App() {
     setTodo((prev) => [{ id: Date.now(), ...todo }, ...prev]);
   };
 
-  const updateTodo = (id,todo)=>{
-    setTodo((prev)=> prev.map((prevTodo)=>(prevTodo.id===id ? todo:prevTodo ))) 
-  }
+  const updateTodo = (id, todo) => {
+    setTodo((prev) =>
+      prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo)),
+    );
+  };
 
-  const deleteTodo = (id)=>{
-    setTodo((prev)=>prev.filter((todo)=>todo.id!== id))
-  }
+  const deleteTodo = (id) => {
+    setTodo((prev) => prev.filter((todo) => todo.id !== id));
+  };
 
-  const toggleComplete=(id)=>{
-    setTodo((prev)=>prev.map((prevTodo)=>prevTodo===id?{...prevTodo,completed:!prevTodo.completed}:prevTodo))
-  }
+  const toggleComplete = (id) => {
+    setTodo((prev) =>
+      prev.map((prevTodo) =>
+        prevTodo === id
+          ? { ...prevTodo, completed: !prevTodo.completed }
+          : prevTodo,
+      ),
+    );
+  };
+
+  useEffect(() => {
+    const todo = JSON.parse(localStorage.getItem("todo"));
+    if (todo && todo.length > 0) {
+      setTodo(todo);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todo", JSON.stringify(todo));
+  }, [todo]);
+
   return (
     <TodoProvider
       value={{ todos, addTodo, updateTodo, deleteTodo, toggleComplete }}
