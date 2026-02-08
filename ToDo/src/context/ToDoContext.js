@@ -10,8 +10,8 @@ const TodoContext = createContext({
     }
   ],
   addTodo:(todo)=>{},
-  deleteTodo:(id,todo)=>{},
-  updateTodo:(id)=>{},
+  updateTodo:(id,todo)=>{},
+  deleteTodo:(id)=>{},
   toggleComplete:(id)=>{}
 });
 
